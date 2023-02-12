@@ -50,6 +50,8 @@ def restore(instance):
     for relative_dir in instance['relative_dirs']:
         abs_src_path = str(pathlib.Path.joinpath(src_path, relative_dir).resolve()) + '/'
         abs_tgt_path = str(pathlib.Path.joinpath(tgt_path, relative_dir).resolve()) + '/'
+        if not os.path.exists(abs_tgt_path):
+            os.makedirs(abs_tgt_path)
         print(colored("app_name: %s start resync relative_dir: %s ." % (app_name, relative_dir), "yellow"))
         print(abs_src_path)
         print(abs_tgt_path)
@@ -83,6 +85,8 @@ def backup(instance):
     for relative_dir in instance['relative_dirs']:
         abs_src_path = str(pathlib.Path.joinpath(src_path, relative_dir).resolve()) + '/'
         abs_tgt_path = str(pathlib.Path.joinpath(tgt_path, relative_dir).resolve()) + '/'
+        if not os.path.exists(abs_tgt_path):
+            os.makedirs(abs_tgt_path)
         print(colored("app_name: %s start resync relative_dir: %s ." % (app_name, relative_dir), "yellow"))
         rsync(abs_src_path, abs_tgt_path)
         print(colored("app_name: %s end resync relative_dir: %s ." % (app_name, relative_dir), "yellow"))
