@@ -1,19 +1,21 @@
-# dfm
-dfm is a linux tools for Dot's Files Manager. (backup or restore)
+# mdfm
+
+mdfm is a linux tools for My Dot Files Manager. (backup or restore)
 
 ### Usage
-```
-python -m dfm -h
-usage: dfm [-h] [-D] [-I] [-C CONFIG_FILE] [-P PROCESS_NUMBER] [-B | -R]
 
-dfm is a linux tools for Dot's Files Manager. (backup or restore)
+```
+python -m mdfm -h
+usage: mdfm [-h] [-D] [-I] [-C CONFIG_FILE] [-P PROCESS_NUMBER] [-B | -R]
+
+mdfm is a linux tools for My Dot Files Manager. (backup or restore)
 
 options:
   -h, --help            show this help message and exit
   -D, --run-demo
   -I, --init-config
   -C CONFIG_FILE, --config-file CONFIG_FILE
-                        (Default: ~/.dfm.json)
+                        (Default: ~/.mdfm.json)
   -P PROCESS_NUMBER, --multi-process-number PROCESS_NUMBER
                         multiprocessing support. Default is 1.
   -B, --backup-action   action is backup. backup value eq True. By Default.
@@ -21,11 +23,12 @@ options:
 ```
 
 ### Config file Format
+
 ```
 [
     {
-        "app_name":     "dfm-demo", 
-        "description":  "test demo.", 
+        "app_name":     "mdfm-demo",
+        "description":  "test demo.",
         "source_dir":   "demo_dir/src",
         "target_dir":   "demo_dir/tgt",
         "relative_dirs": [
@@ -40,23 +43,21 @@ options:
 ```
 
 ### Environment setup
+
 Python version: 3
 
-Package dependencies:
-- pathlib
-- argparse
-- termcolor
-
 ### How to install dependences?
+
 ```bash
 python -m pip install -r requirements.txt
+pip install mdfm
 ```
 
-### How to build dist file(*.whl)?
+### How to build dist file(\*.whl)?
+
 ```bash
 python -m pip install setuptools wheel twine
-python setup.py sdist
-python setup.py bdist_wheel
+python setup.py sdist bdist_wheel
 ```
 
 or

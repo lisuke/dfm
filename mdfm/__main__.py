@@ -1,5 +1,4 @@
-from dfm.dfm import main
-import os
+from mdfm.mdfm import main
 
 if __name__ == "__main__":
     main()
